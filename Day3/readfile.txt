@@ -1,0 +1,11 @@
+	Language          interpreter syntax              Language          complilation syntax
+
+1    python           python filename.python           c                  gcc filename.c
+2    php			  php filename.php                 java               javac filename.java
+3	 perl			  perl filename.pl
+4	 ruby			  ruby filename.rb
+5	 c				  ./a.out
+6	 java			  java	filename
+7   groovy           groovy filename.groovy 
+8    scala             scala filename.scala
+9    logo              logo filename.logo
