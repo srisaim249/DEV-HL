@@ -3,11 +3,10 @@ file1= open("data1.csv")
 file2 =open("data2.csv")
 file3="data3.csv"
 
-file3_write=open(file3,"w")
+
 
 record1=dict()
 record2  = dict()
-
 
 file2.next()
 file2.next()
@@ -29,4 +28,4 @@ for id1 in record1:
 	if id1 in record2:
 		(record1[id1].extend(record2[id1][1:]))
 	
-file3_write.write("%s"%record1)
+        print record1[id1]
