@@ -52,8 +52,8 @@ for line in file_pointer:
 
 	elif(user_id==name):
 		count+=1
-		print line
-		if(count==1):
-			break
+		
+		if(count<=1):
+			print line
 			
 	
