@@ -13,7 +13,7 @@ sheets=book.sheet_names()
 dictionary={}
 
 
-count=0
+
 for sheet_name in sheets:
 	sh=book.sheet_by_name(sheet_name)
 	for rownum in range(sh.nrows):

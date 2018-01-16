@@ -21,7 +21,7 @@ list1=[]
 count=0
 
 for line in csv_reader:
-	print(type(line))
+	
 	if(line['first_name']==name):
 		if line['id'] not in list1:
 			count+=1
