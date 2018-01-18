@@ -13,6 +13,9 @@ col1=argument1.split(",")[1]
 row2=int(sys.argv[2])
 col2=int(sys.argv[3])
 
+if(col2<col1 or row2<row1):
+	print("please enter columns or columns properly properly")
+	exit(2345)
 
 row2+=1
 col2+=1
