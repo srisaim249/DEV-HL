@@ -64,7 +64,7 @@ for row in range(int(rowx),int(rowspawn)):
 
 for row in range(int(file_row),int(file_rowspawn)):
 	for col in range(int(file_col),int(file_colspawn)):
-		sheet.write(row,col)
+		sheet.write()
 
 
 workbook.save(filepath)
