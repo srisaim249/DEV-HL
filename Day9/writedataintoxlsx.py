@@ -30,7 +30,7 @@ dict_list = []
 d = {}
 
 s=" "
-s1=" "
+s1=[]
 
 # data reading from file1
 
@@ -50,21 +50,28 @@ for row in range(int(rowx),int(rowspawn)):
 
 	row_values=sheets.row_values(row)	
 	for cols in range(int(colx),int(colspawn)):
-
-
-		
-		s=s+str(row_values[cols])+"	"
+		s1.append(str(row_values[cols]))
 
 
 
+c=0
 
-
-	s=s+"\n"
-
+i=0
 
 for row in range(int(file_row),int(file_rowspawn)):
 	for col in range(int(file_col),int(file_colspawn)):
-		sheet.write()
+		if(c<(int(colx)+int(colspawn))/2):
+			if(i>=(len(s1))):
+				break
+								
+			else:
+				sheet.write(row,col,s1[i])
+				print s1[i]
+
+				i+=1
+
+		else:
+			sheet.write(row,col,"\n")	
 
 
 workbook.save(filepath)
