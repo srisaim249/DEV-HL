@@ -1,16 +1,16 @@
 import mysql.connector
 
-db =mysql.connector.connect(host='localhost',user='root',password="password",db="user_details")
+
+db =mysql.connector.connect(host="localhost",user="root",password="password")
 
 curs = db.cursor()
 
-mysql="CREATE TABLE user_data1(id int primary key,first_name varchar(30),last_name varchar(30),gender varchar(30))";
+curs.execute("DROP DATABASE IF EXISTS user_info")
+curs.execute("CREATE DATABASE  user_info")
+curs.execute("USE  user_info")
 
+curs.execute("CREATE TABLE  user_profile(id INT PRIMARY KEY,first_name VARCHAR(30),last_name VARCHAR(30),gender VARCHAR(30))")
 
-curs.execute(mysql);
+curs.close()
 
-data="DESCRIBE user_data1";
-
-
-print curs.execute(data)
-
+db.close()
