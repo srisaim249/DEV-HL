@@ -26,10 +26,7 @@ file_rowspawn+=1
 file_colspawn+=1
 
 
-dict_list = []
-d = {}
 
-s=" "
 s1=[]
 
 # data reading from file1
@@ -46,32 +43,28 @@ workbook = xlwt.Workbook()
 sheet = workbook.add_sheet('test')
 
 
-for row in range(int(rowx),int(rowspawn)):	
+for rows in range(int(rowx),int(rowspawn)):	
 
-	row_values=sheets.row_values(row)	
+	row_values=sheets.row_values(rows)	
 	for cols in range(int(colx),int(colspawn)):
+		
 		s1.append(str(row_values[cols]))
 
+print s1
 
 
-c=0
 
 i=0
 
-for row in range(int(file_row),int(file_rowspawn)):
-	for col in range(int(file_col),int(file_colspawn)):
-		if(c<(int(colx)+int(colspawn))/2):
-			if(i>=(len(s1))):
-				break
+for row in range(int(file_row)-1,int(file_rowspawn)-1):
+	for col in range(int(file_col)-1,int(file_colspawn)-1):
+		
+		if(i>=(len(s1))):
+			break
 								
-			else:
-				sheet.write(row,col,s1[i])
-				print s1[i]
-
-				i+=1
-
 		else:
-			sheet.write(row,col,"\n")	
+			sheet.write(row,col,s1[i])
+			i+=1
 
-
+		
 workbook.save(filepath)
