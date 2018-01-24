@@ -1,22 +1,33 @@
-file = open('/home/saisri/Desktop/DEV-HL/Day3/message.txt','r')
+fileread=open("big.txt","r")
 
-totalwords = []
+data=set()
 
-for line in file:
-	word_list = line.split()
-	for word in word_list:
-		word = word.lower()
-		totalwords=word
-		print totalwords
-		count=0
-		if word not in totalwords:
-	 	 count = 1
-	 	 totalwords.append(word+"\t")
-	 	 totalwords.append(count)
+data_unique={}
+
+for line in fileread:
+	unique_words=line.split(" ")
+	for word in unique_words:
+		word=word.lower()
+
+		if word not in data:
+
+			if word.isdigit():
+				pass
+			
+			elif word.endswith("\n"):
+				word=word.strip()
+				data.add(word)
+
+			else:
+				data.add(word)	
+
+			data_unique[word]=1
 		else:
-	 		count += 1
+			data_unique[word]+=1	
 
-			totalwords.append(word+"\t")
-			totalwords.append(count)	 
- 
-print((totalwords))
+print len(data)			
+
+for i,j in data_unique.items():
+	print (i,j)
+
+
